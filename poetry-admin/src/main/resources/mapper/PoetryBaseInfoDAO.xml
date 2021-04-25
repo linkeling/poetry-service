@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 诗词基本信息表 -->
+<mapper namespace="com.poetry.admin.dao.PoetryBaseInfoDAO">
+    <sql id="allColumns">
+        t.id as id, t.type as type, t.title_name as titleName, t.chaodai as chaodai, t.author as author,t.label as label, t.read_num as readNum,t.poetry_text as poetryText,t.translation as translation, t.notes as notes, t.appreciation as appreciation, t.created as created,
+        t.updated as updated
+    </sql>
+</mapper>

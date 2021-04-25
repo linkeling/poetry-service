@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 诗词收藏信息 -->
+<mapper namespace="com.poetry.admin.dao.PoetryUserCollectDAO">
+    <sql id="allColumns">
+        t.id as id, t.app_code as appCode, t.poetry_id as poetryId, t.created as created, t.updated as updated
+    </sql>
+</mapper>

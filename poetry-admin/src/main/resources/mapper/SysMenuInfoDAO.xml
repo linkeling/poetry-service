@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 系统管理-权限资源表  -->
+<mapper namespace="com.poetry.admin.dao.SysMenuInfoDAO">
+    <sql id="allColumns">
+        t.id as id, t.parent_id as parentId, t.front_url as frontUrl, t.resources as resources, t.menu_title as menuTitle, t.level as level, t.sort_no as sortNo, t.remarks as remarks, 
+        t.created as created, t.updated as updated
+    </sql>
+</mapper>

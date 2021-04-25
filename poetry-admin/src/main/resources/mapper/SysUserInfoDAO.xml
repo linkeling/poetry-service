@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 用户表 -->
+<mapper namespace="com.poetry.admin.dao.SysUserInfoDAO">
+    <sql id="allColumns">
+        t.id as id, t.user_name as userName, t.password as password, t.last_login_time as lastLoginTime, t.last_login_ip as lastLoginIp, t.user_type as userType, t.relation_id as relationId, t.role_id as roleId, 
+        t.name as name, t.contacts_phone as contactsPhone, t.create_user as createUser, t.valid as valid, t.created as created, t.updated as updated
+    </sql>
+</mapper>

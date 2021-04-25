@@ -1,0 +1,74 @@
+spring:
+  application:
+    name: poetry-admin
+  profiles:
+    active: dev
+  http:
+    encoding:
+      force: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+  jackson:
+    dateFormat: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+server:
+  port: 8085
+  connectionTimeout: 180000
+  tomcat:
+    uri-encoding: UTF-8
+    #最大并发数
+    max-threads: 1000
+    #接受和处理的最大连接数
+    max-connections: 20000
+    #初始化时创建的线程数
+    min-SpareThreads: 20
+    acceptCount: 700
+
+mybatis-plus:
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
+  mapper-locations: classpath*:mapper/*.xml
+mybatis:
+  custom-cache:
+    flushInterval: 3600
+
+# log
+logging:
+  file: /home/data/logs/${spring.application.name}.log
+  errorFile: /home/data/logs/${spring.application.name}_error.log
+  fileMaxHistory: 30
+  fileMaxSize: 50MB
+  pattern:
+    console: '%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID} [%X{track_id}] ${spring.application.name}){magenta} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx'
+
+# doc
+swagger:
+  enable: true
+  title: 诗词鉴赏服务端
+  description: "补充说明详见"
+  basePackage: com.poetry.admin.rest.v1
+  globalHeader: true
+
+
+
+---
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shici_dev?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true&rewriteBatchedStatements=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+
+#配置web页面入口
+magic-api:
+  web: "/magic/web"
+  #配置文件存储位置。当以classpath开头时，为只读模式
+  resource:
+    location: "/data/magic-api"
